@@ -35,3 +35,12 @@ $ wsutil open OS
 
 ---
 
+Documentation is a lot of work. So too is explaining the config file format. See `./src/structures/ConfigHelper.ts`
+
+---
+
+Some quality of life features:
+ 
+- `--config=PATH` custom config PATH
+
+

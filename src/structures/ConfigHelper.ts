@@ -33,7 +33,7 @@ export const DEFAULT_WORKSPACE: Omit<Workspace, "name"> = {
 export class ConfigHelper {
   data: WSUConfig = DEFAULT_CONFIG;
 
-  constructor(private path: string = `${homedir()}/.config/.wsutil.json`) {
+  constructor(private path: string = `${homedir()}/.config/wsutil.json`) {
     // replace ~ with homedir() in case someone passes it by default in case this is needed
     this.path = this.path.replace(/^~(?=$|\/|\\)/, homedir());
   }
