@@ -8,7 +8,7 @@ The main purpose of `wsutil` is to allow for the setup of resumable workspaces.
 
 Picture this: 
 
-You're in a new class, Operating Systems with the ~~awful~~ professor Aedo. Now you need 3 main things: The textbook, your notes repo in nvim, and the canvas setup. 
+You're in a new class, Operating Systems with professor Aedo. Now you need 3 main things: The textbook, your notes repo in nvim, and the canvas setup. 
 
 Now wouldn't it be convenient if there was some **utility** application that would let you just open your **workspace** automagically. Something that you could setup once, at the beginning of the semester, and not touch again. Something that would let you get to work immediately.
 
