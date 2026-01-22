@@ -17,14 +17,18 @@ export const openCommand: Command = {
     }
 
     for (const cmd of wkSpace.cmds) {
-      await $`${cmd.cmd}`;
+      Bun.spawn({
+        cmd: ["sh", "-c", cmd.cmd, ...cmd.argv],
+        stdout: "ignore",
+        stderr: "ignore",
+        stdin: "ignore",
+      });
     }
 
     await new Promise((r) => setTimeout(r, 300));
 
     for (const url of wkSpace.urls) {
-      console.log(url);
-      console.log(await $`xdg-open ${url}`);
+      await $`xdg-open ${url}`;
     }
   },
 };
