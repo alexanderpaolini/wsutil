@@ -14,7 +14,7 @@ export class WorkspaceUtil {
 
   public cmds: Command[] = [];
 
-  public run(...args: string[]) {
+  public async run(...args: string[]) {
     if (args.length == 0) {
       throw new Error(`expected command name`);
     }
@@ -24,7 +24,7 @@ export class WorkspaceUtil {
 
     if (cmd == undefined) throw new Error(`command ${cmdName} not found`);
 
-    cmd.run(this, ...args.slice(1));
+    await cmd.run(this, ...args.slice(1));
   }
 
   public addCmd(cmd: Command) {

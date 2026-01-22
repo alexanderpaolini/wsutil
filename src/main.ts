@@ -40,4 +40,8 @@ if (values.help) {
   process.exit(0);
 }
 
-wsutil.run(...positionals.slice(2));
+try {
+  await wsutil.run(...positionals.slice(2));
+} catch (err) {
+  console.error(err.toString());
+}

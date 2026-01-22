@@ -18,10 +18,8 @@ export const openCommand: Command = {
 
     for (const cmd of wkSpace.cmds) {
       Bun.spawn({
-        cmd: ["sh", "-c", cmd.cmd, ...cmd.argv],
-        stdout: "ignore",
-        stderr: "ignore",
-        stdin: "ignore",
+        cmd: [cmd.cmd, ...cmd.argv],
+        detached: true,
       });
     }
 
@@ -30,5 +28,7 @@ export const openCommand: Command = {
     for (const url of wkSpace.urls) {
       await $`xdg-open ${url}`;
     }
+
+    process.exit(0);
   },
 };
