@@ -5,6 +5,9 @@ export const createCommand: Command = {
   name: "create",
   usage: () => "create <name>",
   run: async (wsutil, name) => {
+    if (!name) {
+      throw new Error("workspace name required");
+    }
     const cnfg = await wsutil.configHelper.read();
 
     if (cnfg.workspaces.find((x) => x.name == name)) {
