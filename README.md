@@ -19,7 +19,7 @@ $ wsutil create OS
 > ok
 ```
 
-Add the following to the config file:
+Set the following in the config file:
 
 ```json
 "cmds": [
@@ -51,10 +51,14 @@ $ wsutil open OS
 
 Documentation is a lot of work. So too is explaining the config file format. See `./src/structures/ConfigHelper.ts`
 
+The default config path is `~/.config/wsutil.json`. Please do note that you can open this by doing:
+
+```bash
+$ nvim $(wsutil config)
+```
 ---
 
 Some quality of life features:
  
 - `--config=PATH` custom config PATH
-
 

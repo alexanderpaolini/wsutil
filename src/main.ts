@@ -4,6 +4,7 @@ import { listCommand } from "./commands/list";
 import { createCommand } from "./commands/create";
 import { deleteCommand } from "./commands/delete";
 import { openCommand } from "./commands/open";
+import { configCommand } from "./commands/config";
 
 const { values, positionals } = parseArgs({
   args: Bun.argv,
@@ -19,9 +20,10 @@ const wsutil = new WorkspaceUtil({
   config: values.config,
 });
 
+wsutil.addCmd(configCommand);
 wsutil.addCmd(createCommand);
-wsutil.addCmd(listCommand);
 wsutil.addCmd(deleteCommand);
+wsutil.addCmd(listCommand);
 wsutil.addCmd(openCommand);
 
 if (values.help) {

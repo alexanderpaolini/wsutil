@@ -36,6 +36,10 @@ export class ConfigHelper {
     this.path = this.path.replace(/^~(?=$|\/|\\)/, homedir());
   }
 
+  public getPath() {
+    return this.path;
+  }
+
   async read(): Promise<WSUConfig> {
     try {
       const text = await Bun.file(this.path).text();
