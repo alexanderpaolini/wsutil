@@ -17,14 +17,28 @@ Now picture *this*:
 ```bash
 $ wsutil create OS
 > ok
-$ wsutil edit OS set dir ~/Documents/UCF/COP4600/
-> ok
-$ wsutil edit OS add url https://webcourses.ucf.edu/courses/SOME_NUMBER_HERE
-> ok
-$ wsutil edit OS add url https://pages.cs.wisc.ediu/~remzi/OSTEP/
-> ok
-$ wsutil edit OS add app kitty -- -e nvim $WS_DIR
-> ok
+```
+
+Add the following to the config file:
+
+```json
+"cmds": [
+        {
+          "cmd": "zen-browser",
+          "argv": [
+            "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+            "https://webcourses.ucf.edu/courses/SOME_COURSE_ID"
+          ]
+        },
+        {
+          "cmd": "kitty",
+          "argv": [
+            "--directory=~/Code/COP4600/",
+            "nvim",
+            "."
+          ]
+        }
+      ]
 ```
 
 And now that workspace is created.
