@@ -29,10 +29,19 @@ wsutil.addCmd(openCommand);
 if (values.help) {
   console.log("wsutil - A modern workspace utility application.");
 
+  console.log();
+  console.log("Options:");
   for (const cmd of wsutil.cmds) {
-    console.log();
     console.log("\t" + cmd.usage());
   }
+  console.log();
+
+  console.log("Flags:");
+  console.log("\t--help");
+  console.log("\tShow this menu!");
+  console.log();
+  console.log("\t--config <path>");
+  console.log("\tSpecify a custom config file path.");
 
   console.log();
   console.log("made with 🫀");
@@ -44,4 +53,5 @@ try {
   await wsutil.run(...positionals.slice(2));
 } catch (err) {
   console.error(err.toString());
+  console.error("\tuse 'wsutil --help' for more info");
 }
