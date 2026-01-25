@@ -3,7 +3,6 @@ import { WorkspaceUtil } from "./structures/WorkspaceUtil";
 import { listCommand } from "./commands/list";
 import { createCommand } from "./commands/create";
 import { deleteCommand } from "./commands/delete";
-import { editCommand } from "./commands/edit";
 import { openCommand } from "./commands/open";
 
 const { values, positionals } = parseArgs({
@@ -23,7 +22,6 @@ const wsutil = new WorkspaceUtil({
 wsutil.addCmd(createCommand);
 wsutil.addCmd(listCommand);
 wsutil.addCmd(deleteCommand);
-wsutil.addCmd(editCommand);
 wsutil.addCmd(openCommand);
 
 if (values.help) {

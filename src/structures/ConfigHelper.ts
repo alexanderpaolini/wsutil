@@ -10,7 +10,6 @@ interface Workspace {
   props: {
     dir?: string;
   };
-  urls: string[];
   cmds: CmdConfig[];
 }
 
@@ -26,7 +25,6 @@ const DEFAULT_CONFIG: WSUConfig = {
 
 export const DEFAULT_WORKSPACE: Omit<Workspace, "name"> = {
   props: {},
-  urls: [],
   cmds: [],
 };
 

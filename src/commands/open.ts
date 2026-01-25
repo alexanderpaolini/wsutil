@@ -1,5 +1,4 @@
 import { Command } from "../structures/command";
-import { $ } from "bun";
 
 export const openCommand: Command = {
   name: "open",
@@ -21,12 +20,6 @@ export const openCommand: Command = {
         cmd: [cmd.cmd, ...cmd.argv],
         detached: true,
       });
-    }
-
-    await new Promise((r) => setTimeout(r, 300));
-
-    for (const url of wkSpace.urls) {
-      await $`xdg-open ${url}`;
     }
 
     process.exit(0);

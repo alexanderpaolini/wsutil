@@ -7,7 +7,9 @@ export const listCommand: Command = {
     const cnfg = await wsutil.configHelper.read();
     const wsList = cnfg.workspaces;
     const wsStr = wsList.map((x) => x.name).join("\t");
+
     console.log(wsStr);
+
     return;
   },
 };
